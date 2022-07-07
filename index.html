@@ -149,38 +149,38 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN" name="jhonnythub-contact-form">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" name="nama" />
                                 <label for="name">Full name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" name="email" />
                                 <label for="email">Email address</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" name="phone" />
                                 <label for="phone">Phone number</label>
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" name="pesan"></textarea>
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
+                            <div class="alert alert-success alert-dismissible fade show my-alert d-none" role="alert">
+                                <strong>Terima kasih!</strong> Pesan Anda sudah kami terima.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                            <button class="btn btn-primary btn-xl disabled btn-send" id="submitButton" type="submit">Send</button>
+                            <button class="btn btn-primary btn-xl disabled btn-loading d-none" type="button" disabled>
+                                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -374,5 +374,31 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyK5EIe6sOmM5977mcvdnhEVb3-aiqWiGtmxAvEyn6Cn-svGSJdyy75inbSkAscoPYgZA/exec'
+            const form = document.forms['jhonnythub-contact-form'];
+            const btnSend = document.querySelector('.btn-send');
+            const btnLoading = document.querySelector('.btn-loading');
+            const Myalert = document.querySelector('.my-alert');
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault();
+
+              btnLoading.classList.toggle('d-none');
+              btnSend.classList.toggle('d-none');
+
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    
+                    btnLoading.classList.toggle('d-none');
+                    btnSend.classList.toggle('d-none');
+                    Myalert.classList.toggle('d-none');
+                    form.reset();
+                    window.location.replace();
+            
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+        </script>
     </body>
 </html>
