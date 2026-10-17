@@ -1,0 +1,114 @@
+:root {
+  --bg: #0b1220;
+  --surface: #111c2e;
+  --surface-hover: #17263a;
+  --text: #edf4fc;
+  --muted: #9eafc4;
+  --accent: #76edc0;
+  --accent-secondary: #55d9ef;
+  --border: #25354b;
+  --radius-sm: 9px;
+  --radius-md: 15px;
+  --radius-lg: 22px;
+  --container-width: 1160px;
+  --section-spacing: 76px;
+  --transition: 220ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.7; overflow-x: hidden;
+}
+.container { max-width: var(--container-width); }
+section:not(.main) { padding-top: var(--section-spacing) !important; padding-bottom: var(--section-spacing) !important; }
+section:not(.main), .about, .portofolio, .contact { background: var(--bg) !important; color: var(--text); }
+.navbar {
+  position: sticky; top: 0; z-index: 1000; min-height: 70px;
+  background: rgba(11, 18, 32, .92) !important; backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(37, 53, 75, .85); padding: 12px 0;
+}
+.navbar-brand { color: var(--text) !important; font-weight: 800; letter-spacing: -.04em; }
+.navbar-brand::before { content: "JH"; color: var(--accent); font-size: 1.35rem; margin-right: 10px; }
+.navbar-brand:hover { background: transparent; padding: initial; color: var(--accent) !important; }
+.nav-link { color: var(--muted) !important; font-size: .9rem; font-weight: 600; transition: color var(--transition); }
+.nav-link:hover, .nav-link:focus { color: var(--accent) !important; background: transparent !important; }
+.navbar-toggler { border-color: var(--border); }
+.navbar-toggler:focus { box-shadow: 0 0 0 .2rem rgba(118,237,192,.18); }
+.main {
+  position: relative; isolation: isolate; display: flex; align-items: center; min-height: 610px; height: min(86vh, 780px);
+  background: radial-gradient(ellipse at 78% 45%, rgba(85,217,239,.12), transparent 34%),
+              linear-gradient(90deg, rgba(11,18,32,.98) 0%, rgba(11,18,32,.92) 42%, rgba(11,18,32,.2) 100%),
+              url('../image/jhonny.webp') no-repeat 76% 28% / auto 100%, var(--bg) !important;
+  border-bottom: 1px solid var(--border);
+}
+.main .container { position: relative; z-index: 1; }
+.main .row { align-items: center; }
+.main h1 { max-width: 680px; margin: 0 0 14px; color: var(--text); font-size: clamp(2.6rem, 5.2vw, 4.5rem); line-height: 1.08; letter-spacing: -.055em; font-weight: 850; text-transform: none; }
+.main h1::first-line { color: var(--text); }
+.main h2 { color: var(--accent); font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.5; letter-spacing: .08em; font-weight: 700; margin-bottom: 25px; }
+.main .col-lg-6::before { content: "HALO, SAYA"; display: block; color: var(--accent-secondary); font-size: .78rem; font-weight: 800; letter-spacing: .2em; margin-bottom: 14px; }
+.whatsapp, .btn-success, .btn-primary {
+  background: var(--accent) !important; color: #07131d !important; border: 1px solid var(--accent) !important;
+  border-radius: var(--radius-sm); font-weight: 800; padding: 12px 20px; box-shadow: none !important;
+  text-decoration: none; transition: transform var(--transition), background var(--transition), border-color var(--transition);
+}
+.whatsapp:hover, .btn-success:hover, .btn-primary:hover { background: var(--accent-secondary) !important; border-color: var(--accent-secondary) !important; transform: translateY(-2px); color: #07131d !important; }
+.btn-dark, .btn-outline-light { background: transparent !important; border: 1px solid var(--border) !important; color: var(--text) !important; border-radius: var(--radius-sm); }
+.btn-dark:hover, .btn-outline-light:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+h1, h2, h3, h4, h5, h6 { color: var(--text); letter-spacing: -.025em; }
+.about .row { align-items: center; row-gap: 30px; }
+.about .col-lg-5 { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 12px; overflow: hidden; }
+.about .col-lg-5 img { width: 100%; max-height: 520px; object-fit: cover; object-position: center 28%; border-radius: 14px; }
+.about .col-lg-7 { font-family: inherit !important; font-weight: 400 !important; }
+.about h1, .service h1, .portofolio h1, .contact h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800 !important; margin-bottom: 12px; }
+.about p { color: var(--muted); }
+.progress { height: 28px; margin: 14px 0 !important; background: #08101d; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.pro-value1, .pro-value2, .pro-value3, .pro-value4 { height: 100%; border-radius: 7px; background: linear-gradient(90deg, var(--accent), var(--accent-secondary)); }
+.pro-value1 { width: 95%; animation: load1 1.2s ease both; }
+.pro-value2 { width: 98%; animation: load2 1.2s ease both; }
+.pro-value3 { width: 70%; animation: load3 1.2s ease both; }
+.pro-value4 { width: 40%; animation: load4 1.2s ease both; }
+.progress p { color: #07131d !important; padding: 2px 10px; font-size: .78rem; font-weight: 800; line-height: 22px; margin: 0; }
+@keyframes load1 { from {width:0} to {width:95%} } @keyframes load2 { from {width:0} to {width:98%} } @keyframes load3 { from {width:0} to {width:70%} } @keyframes load4 { from {width:0} to {width:40%} }
+.service.bg-light { background: linear-gradient(180deg, #0d1728, var(--bg)) !important; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.service .card, .portofolio .card { height: 100%; color: var(--text); background-color: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 14px 36px rgba(0,0,0,.18) !important; transition: transform var(--transition), border-color var(--transition), background var(--transition); }
+.service .card:hover, .portofolio .card:hover { transform: translateY(-5px); background-color: var(--surface-hover) !important; border-color: rgba(85,217,239,.6) !important; }
+.service .card p, .portofolio .card p { color: var(--muted) !important; font-size: .94rem; }
+.service .circle { display: inline-grid; place-items: center; width: 62px; height: 62px; padding: 0; color: var(--accent); background: rgba(85,217,239,.12); border: 1px solid rgba(85,217,239,.22); border-radius: 17px; font-size: 1.55rem; }
+.service .card:hover .circle { color: var(--bg); background: var(--accent); }
+.portofolio .card { background-position: center !important; background-size: cover !important; background-blend-mode: multiply; }
+.portofolio .card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,18,32,.35), rgba(11,18,32,.95)); pointer-events: none; }
+.portofolio .card-body { position: relative; z-index: 1; padding: 28px 20px; }
+.portofolio .card-body img { object-fit: cover; border: 2px solid rgba(118,237,192,.75); background: var(--surface); }
+.portofolio .card h4 { margin-top: 15px; font-size: 1.1rem; }
+.portofolio .card a { text-decoration: none; }
+.contact { border-top: 1px solid var(--border); }
+.contact .row.text-center { gap: 18px 0; }
+.contact .circle { display: inline-grid; place-items: center; width: 58px; height: 58px; padding: 0; color: var(--accent); background: var(--surface); border: 1px solid var(--border); border-radius: 16px; font-size: 1.4rem; }
+.contact h5 { font-size: .95rem; overflow-wrap: anywhere; margin-top: 12px; }
+.contact span { color: var(--muted); font-size: .85rem; }
+#wa:hover, #fb:hover, #ig:hover { background: var(--surface-hover); color: var(--accent); }
+.footer { background: #080e19 !important; border-top: 1px solid var(--border); color: var(--muted) !important; }
+.footer p { margin: 0; font-size: .85rem; }
+a { transition: color var(--transition); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-secondary); outline-offset: 4px; }
+@media (max-width: 991px) {
+  .main { height: auto; min-height: 600px; background-position: 68% center; }
+  .main h1 { max-width: 560px; }
+}
+@media (max-width: 767px) {
+  :root { --section-spacing: 54px; }
+  .navbar-brand { font-size: 1rem; }
+  .main { min-height: 620px; height: auto; background: linear-gradient(90deg, rgba(11,18,32,.97), rgba(11,18,32,.78)), url('../image/jhonny.webp') no-repeat 62% center / cover, var(--bg) !important; }
+  .main .container { padding-top: 45px !important; padding-bottom: 45px !important; }
+  .main .row { padding-top: 20px !important; padding-bottom: 20px !important; }
+  .main h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .about .col-lg-5 { max-width: 440px; margin-inline: auto; }
+  .about .col-lg-5 img { max-height: 420px; }
+  .service .card-body { padding: 24px 18px; }
+  .portofolio .card-body { padding: 24px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
