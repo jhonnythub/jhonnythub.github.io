@@ -62,6 +62,7 @@
             <div class="col-lg-6 py-5">
                 <h1 data-aos="zoom-in" data-aos-duration="900">Maulana</h1>
                 <h2 data-aos="fade-right" data-aos-duration="900">FULL STACK WEB DEVELOPER</h2>
+                <p class="fw-bolder">PHP, Laravel & CodeIgniter</p>
                 <p class="hero-description text-light mb-4">Saya membangun dan mengembangkan aplikasi web untuk membantu bisnis bekerja lebih efektif. Fokus pada PHP, pengembangan sistem, dan solusi digital sesuai kebutuhan.</p>
                 <a class="whatsapp btn text-uppercase" href="https://wa.me/6289517400007" data-aos="flip-up" data-aos-duration="900">
                     <i class="bi bi-whatsapp"></i> Hubungi Saya!
@@ -170,7 +171,7 @@
                             <span><img src="assets/image/xflashlogo.jpg" class="rounded-circle" width="75" alt="Logo X-Flash Indonesia"/></span>
                         </div>
                         <h4 class="fw-bolder text-white">X-FLASH INDONESIA</h4>
-                        <p><a class="btn btn-primary fst-italic" href="https://www.xflash.my.id">WEBSITE <i class="bi bi-globe-americas"></i></a></p>
+                        <p><button class="btn btn-primary fst-italic" data-bs-target="#xflashModal" data-bs-toggle="modal">Teknologi & Fitur <i class="bi bi-globe-americas"></i></button></p>
                     </div>
                 </div>
             </div>
@@ -187,13 +188,13 @@
             </div>
             <div class="col-lg-4 mb-3" data-aos="flip-left" data-aos-duration="3000">
                 <div class="card text-center py-3" style="background-image: url(assets/image/asiaflash.png); background-size: cover;">
-                    <a href="https://www.jualbelijam.my.id" class="card-body">
+                    <div class="card-body">
                         <div class="text-center">
                             <span><img class="rounded-circle" src="assets/image/logo-asia.jpg" width="75" alt="Logo Asia Flash"/></span>
                         </div>
                         <h4 class="fw-bolder text-white">ASIA FLASH</h4>
-                        <p><div class="btn btn-primary fst-italic">WEBSITE <i class="bi bi-globe-americas"></i></div></p>
-                    </a>
+                        <p><button class="btn btn-primary fst-italic" data-bs-target="#asiaflashModal" data-bs-toggle="modal">Teknologi & Fitur <i class="bi bi-globe-americas"></i></button></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -206,21 +207,14 @@
         <div class="row py-5 mx-auto">
             <div class="col-lg-8 mx-auto">
                 <div class="row text-center">
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <div class="circle" id="wa">
                             <span ><i class="bi bi-envelope-at-fill"></i></span>
                         </div>
-                        <h5>dominictorretto501@gmail.com</h5>
+                        <h5>jhonnythub@gmail.com</h5>
                         <span>JhonnyThub</span>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="circle" id="fb">
-                            <span><i class="bi bi-facebook"></i></span>
-                        </div>
-                        <h5>@jhonnythub</h5>
-                        <span>MR- BEAST</span>
-                    </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-6">
                         <div class="circle" id="ig">
                             <span><i class="bi bi-instagram"></i></span>
                         </div>
@@ -236,6 +230,53 @@
 <section class="footer bg-dark text-white py-3">
     <p class="text-center">© 2026 Jhonny Iskandar · Web Developer</p>
 </section>
+
+<modals>
+
+<div class="modal" tabindex="-1" id="xflashModal">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title">X-FLASH INDONESIA</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Sistem pembukuan service dan pencatatan detail pelanggan</p>
+        <ul class="list-group">
+            <li class="list-group-item">PHP MVC</li>
+            <li class="list-group-item">MySQL</li>
+            <li class="list-group-item">Bootstrap</li>
+            <li class="list-group-item">JavaScript</li>
+            <li class="list-group-item">AJAX</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" id="asiaflashModal">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title">ASIA FLASH INDONESIA</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</modals>
 
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.bundle.min.js"></script>
